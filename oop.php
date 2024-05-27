@@ -184,4 +184,27 @@ $htmlTemplate = '<html>
 
 echo $template->getHtml($htmlTemplate);
 
+echo "-----------------" . "<br>";
+function foo() {
+    echo "In foo()<br>";
+}
 
+function bar($arg = '') {
+    echo "In bar(); argument was '$arg'.<br>";
+}
+
+// 使用 echo 的包装函数
+function echoit($string) {
+    echo $string;
+}
+
+$func1 = "foo";
+$func1();        // 调用 foo()
+
+$func = 'bar';
+$func('test');  // 调用 bar()
+
+$func = 'echoit';
+$func('test');  // 调用 echoit()
+echo "<br>";
+echo "-----------------" . "<br>";
